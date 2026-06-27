@@ -2,6 +2,8 @@
 
 A clean, JSON-driven academic portfolio website. All content lives in `data/` — the HTML/CSS/JS never needs to change.
 
+**Live site:** https://gitgregr.github.io/gwr-website/
+
 ---
 
 ## Project Structure
