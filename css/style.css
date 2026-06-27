@@ -262,16 +262,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .about-bio a:hover { border-color: var(--blue); text-decoration: none; }
 
-.bio-email-copy {
-  display: inline-flex; align-items: center; gap: .45rem;
-  font-family: var(--font-mono); font-size: .875rem;
-  color: var(--text);
-  cursor: pointer;
-  border-bottom: 1.5px solid var(--blue);
-  padding-bottom: .1rem;
-  transition: color var(--dur);
-}
-.bio-email-copy:hover { color: var(--blue); }
+.btn-email-copy { cursor: pointer; }
 
 .about-cta {
   display: flex;
