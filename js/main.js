@@ -122,7 +122,23 @@ function renderProfile(p) {
   const bioEl = document.getElementById('about-bio');
   if (bioEl) {
     const paras = Array.isArray(p.bio) ? p.bio : [p.bio];
-    bioEl.innerHTML = `<div class="about-bio">${paras.map(t => `<p>${esc(t)}</p>`).join('')}</div>`;
+    const emailHtml = p.links.email
+      ? `<p><span class="bio-email-copy" data-email="${esc(p.links.email)}" role="button" tabindex="0" title="Click to copy">${ICON.email} ${esc(p.links.email)}</span></p>`
+      : '';
+    bioEl.innerHTML = `<div class="about-bio">${paras.map(t => `<p>${esc(t)}</p>`).join('')}${emailHtml}</div>`;
+
+    const copyEl = bioEl.querySelector('.bio-email-copy');
+    if (copyEl) {
+      const originalHTML = copyEl.innerHTML;
+      const doCopy = () => {
+        navigator.clipboard.writeText(copyEl.dataset.email).then(() => {
+          copyEl.textContent = 'Copied!';
+          setTimeout(() => { copyEl.innerHTML = originalHTML; }, 2000);
+        });
+      };
+      copyEl.addEventListener('click', doCopy);
+      copyEl.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') doCopy(); });
+    }
   }
 
   // About: profile photo
@@ -140,14 +156,9 @@ function renderProfile(p) {
   // About: CTA buttons
   const ctaEl = document.getElementById('about-cta');
   if (ctaEl) {
-    ctaEl.innerHTML = [
-      p.links.cv
-        ? `<a href="${esc(p.links.cv)}" class="btn-primary" target="_blank" rel="noopener">${ICON.document} Curriculum Vitae</a>`
-        : '',
-      p.links.email
-        ? `<a href="mailto:${esc(p.links.email)}" class="btn-secondary">${ICON.email} Get in Touch</a>`
-        : '',
-    ].join('');
+    ctaEl.innerHTML = p.links.cv
+      ? `<a href="${esc(p.links.cv)}" class="btn-primary" target="_blank" rel="noopener">${ICON.document} Curriculum Vitae</a>`
+      : '';
   }
 
   // Contact section
