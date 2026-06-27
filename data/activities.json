@@ -1,0 +1,82 @@
+[
+  {
+    "category": "Teaching & Mentoring",
+    "icon": "🎓",
+    "items": [
+      {
+        "title": "Teaching Assistant — Info 2850: Networks",
+        "organization": "Cornell University",
+        "period": "Fall 2024",
+        "description": "Led weekly lab sections for 60 undergraduates; designed problem sets covering graph theory, diffusion models, and network centrality. Held two office hours sessions per week.",
+        "link": null
+      },
+      {
+        "title": "Undergraduate Research Mentor",
+        "organization": "Cornell Information Science",
+        "period": "2023–Present",
+        "description": "Mentoring two junior undergraduates on independent research projects related to information credibility and platform design on social media.",
+        "link": null
+      }
+    ]
+  },
+  {
+    "category": "Service & Leadership",
+    "icon": "🤝",
+    "items": [
+      {
+        "title": "Peer Reviewer",
+        "organization": "ACM CHI, CSCW, ICWSM, WebSci",
+        "period": "2023–Present",
+        "description": "Peer reviewer for top venues in human-computer interaction, computational social science, and web science. Completed 15+ reviews to date.",
+        "link": null
+      },
+      {
+        "title": "Graduate Student Representative",
+        "organization": "Cornell IS Ph.D. Caucus",
+        "period": "2024–Present",
+        "description": "Elected representative for Ph.D. student concerns. Organized the department's annual research symposium with 120+ attendees and co-authored the student wellness survey.",
+        "link": null
+      }
+    ]
+  },
+  {
+    "category": "Talks & Media",
+    "icon": "🎤",
+    "items": [
+      {
+        "title": "Invited Talk: \"Designing for Trust\"",
+        "organization": "MIT Media Lab, Human Dynamics Group",
+        "period": "March 2025",
+        "description": "Presented work on how platform design choices interact with user trust in the context of algorithmic content curation. Q&A with faculty and graduate researchers.",
+        "link": "#"
+      },
+      {
+        "title": "Podcast Interview",
+        "organization": "Technically Speaking, Episode 42",
+        "period": "November 2024",
+        "description": "Discussed the corrections backfire research and its implications for platform content moderation policy, in conversation with host Maya Chen.",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "category": "Open Source & Software",
+    "icon": "💻",
+    "items": [
+      {
+        "title": "InfoTrack",
+        "organization": "GitHub",
+        "period": "2023–Present",
+        "description": "An open-source Python toolkit for tracking cross-platform information spread. Supports data collection from four platforms via their APIs. 200+ GitHub stars, actively maintained.",
+        "link": "https://github.com/"
+      },
+      {
+        "title": "SurveyFlow",
+        "organization": "GitHub",
+        "period": "2022–2023",
+        "description": "A lightweight library for designing and deploying survey experiments on Prolific and MTurk with attention checks, manipulation checks, and automated exclusion criteria.",
+        "link": "https://github.com/"
+      }
+    ]
+  }
+]

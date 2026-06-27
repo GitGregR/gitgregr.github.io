@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── Meta (overwritten by JS from profile.json) ── -->
+  <title>Academic Portfolio</title>
+  <meta name="description" content="Academic Portfolio">
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- ── Styles ── -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       MOBILE HEADER (hidden on desktop)
+       ════════════════════════════════════════════════ -->
+  <header class="mobile-header">
+    <div class="mobile-header-inner">
+      <a href="#" class="mobile-logo" id="mobile-logo">Portfolio</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Overlay behind the drawer -->
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="drawer-body">
+      <p class="drawer-name" id="drawer-name"></p>
+      <p class="drawer-title" id="drawer-title"></p>
+      <ul class="drawer-nav">
+        <li><a href="#about"      class="drawer-link">About</a></li>
+        <li><a href="#research"   class="drawer-link">Research</a></li>
+        <li><a href="#activities" class="drawer-link">Activities</a></li>
+        <li><a href="#news"       class="drawer-link">News</a></li>
+        <li><a href="#contact"    class="drawer-link">Contact</a></li>
+      </ul>
+      <div class="drawer-rule"></div>
+      <div class="drawer-social" id="drawer-social"></div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════
+       APP LAYOUT
+       ════════════════════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ── SIDEBAR (desktop) ─────────────────────── -->
+    <aside class="sidebar" aria-label="Site sidebar">
+      <div class="sidebar-inner">
+
+        <!-- Profile -->
+        <div class="sidebar-avatar" id="sidebar-avatar"></div>
+        <h1 class="sidebar-name"        id="sidebar-name"></h1>
+        <p  class="sidebar-title"       id="sidebar-title"></p>
+        <p  class="sidebar-affiliation" id="sidebar-affiliation"></p>
+
+        <div class="sidebar-rule"></div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <a href="#about"      class="sidebar-link" data-section="about">About</a>
+          <a href="#research"   class="sidebar-link" data-section="research">Research</a>
+          <a href="#activities" class="sidebar-link" data-section="activities">Activities</a>
+          <a href="#news"       class="sidebar-link" data-section="news">News</a>
+          <a href="#contact"    class="sidebar-link" data-section="contact">Contact</a>
+        </nav>
+
+        <!-- Social links (rendered by JS) -->
+        <div class="sidebar-social" id="sidebar-social"></div>
+
+      </div>
+    </aside>
+
+    <!-- ── MAIN CONTENT ──────────────────────────── -->
+    <main class="main" id="main-content">
+
+      <!-- ══ ABOUT ══════════════════════════════════ -->
+      <section id="about" class="section">
+        <div class="section-container">
+          <div class="about-layout">
+
+            <div class="about-text">
+              <h2 class="section-heading">About</h2>
+              <!-- Bio paragraphs rendered by JS -->
+              <div id="about-bio"></div>
+              <!-- CV + email buttons rendered by JS -->
+              <div id="about-cta" class="about-cta"></div>
+            </div>
+
+            <div class="about-photo-wrap">
+              <!-- Profile photo (or initials fallback) rendered by JS -->
+              <div class="about-photo-inner" id="about-photo-inner"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ RESEARCH ════════════════════════════════ -->
+      <section id="research" class="section section--alt">
+        <div class="section-container">
+          <h2 class="section-heading">Research</h2>
+          <p class="section-note">◆ denotes equal contribution.</p>
+
+          <!-- Working Papers -->
+          <div class="papers-block">
+            <h3 class="papers-heading">
+              <span class="diamond diamond--green">◆</span>
+              Working Papers
+            </h3>
+            <!-- Paper cards rendered by JS -->
+            <div id="working-papers"></div>
+          </div>
+
+          <!-- Published Papers -->
+          <div class="papers-block">
+            <h3 class="papers-heading">
+              <span class="diamond">◆</span>
+              Published Papers
+            </h3>
+            <!-- Paper cards rendered by JS -->
+            <div id="published-papers"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ACTIVITIES ══════════════════════════════ -->
+      <section id="activities" class="section">
+        <div class="section-container">
+          <h2 class="section-heading">Activities</h2>
+          <!-- Activity groups rendered by JS -->
+          <div id="activities-container"></div>
+        </div>
+      </section>
+
+      <!-- ══ NEWS ════════════════════════════════════ -->
+      <section id="news" class="section section--alt">
+        <div class="section-container">
+          <h2 class="section-heading">News</h2>
+          <!-- News items rendered by JS -->
+          <div id="news-list"></div>
+        </div>
+      </section>
+
+      <!-- ══ CONTACT ═════════════════════════════════ -->
+      <section id="contact" class="section">
+        <div class="section-container">
+          <h2 class="section-heading">Contact</h2>
+          <!-- Contact content rendered by JS -->
+          <div id="contact-content"></div>
+          <div class="contact-social" id="contact-social"></div>
+        </div>
+      </section>
+
+      <!-- ── Footer ────────────────────────────────── -->
+      <footer class="site-footer">
+        <p id="footer-copy"></p>
+      </footer>
+
+    </main>
+  </div><!-- /.layout -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
