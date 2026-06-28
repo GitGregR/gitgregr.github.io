@@ -142,7 +142,7 @@ function renderProfile(p) {
   if (ctaEl) {
     ctaEl.innerHTML = [
       p.links.cv
-        ? `<a href="${esc(p.links.cv)}" class="btn-primary" target="_blank" rel="noopener">${ICON.document} Curriculum Vitae</a>`
+        ? `<a href="${esc(p.links.cv)}" class="btn-primary" target="_blank" rel="noopener">${ICON.document} Resume</a>`
         : '',
       p.links.email
         ? `<span class="btn-secondary btn-email-copy" data-email="${esc(p.links.email)}" role="button" tabindex="0" title="Click to copy email">${ICON.email} ${esc(p.links.email)}</span>`
