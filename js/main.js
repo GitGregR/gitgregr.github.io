@@ -90,7 +90,7 @@ function renderProfile(p) {
 
   // Mobile header name
   const mobileLogoEl = document.getElementById('mobile-logo');
-  if (mobileLogoEl) mobileLogoEl.textContent = p.name.split(' ')[0];
+  if (mobileLogoEl) mobileLogoEl.textContent = p.name;
 
   // Sidebar avatar
   const avatarEl = document.getElementById('sidebar-avatar');
