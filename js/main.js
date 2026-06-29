@@ -64,10 +64,10 @@ function fmtDate(iso) {
 /* ── Data Loading ────────────────────────────────────── */
 async function loadAll() {
   const urls = {
-    profile:      'data/profile.json',
-    publications: 'data/publications.json',
-    news:         'data/news.json',
-    activities:   'data/activities.json',
+    profile:    'data/profile.json',
+    education:  'data/education.json',
+    activities: 'data/activities.json',
+    skills:     'data/skills.json',
   };
   const results = await Promise.all(
     Object.entries(urls).map(([key, url]) =>
@@ -200,91 +200,31 @@ function renderSocials(links, containerId, style) {
 }
 
 /* ════════════════════════════════════════════════════
-   RENDER: PUBLICATIONS
+   RENDER: EDUCATION
    ════════════════════════════════════════════════════ */
-function renderPublications(pubs) {
-  renderPaperList(pubs.working_papers || [], 'working-papers', true);
-  renderPaperList(pubs.published     || [], 'published-papers', false);
-}
+function renderEducation(entries) {
+  const el = document.getElementById('education-list');
+  if (!el || !entries?.length) return;
 
-function renderPaperList(papers, containerId, isWorking) {
-  const el = document.getElementById(containerId);
-  if (!el) return;
-
-  if (!papers.length) {
-    el.innerHTML = `<p style="font-size:.875rem;color:var(--text-muted)">None yet — check back soon.</p>`;
-    return;
-  }
-
-  el.innerHTML = papers.map(p => buildPaperCard(p, isWorking)).join('');
-}
-
-function buildPaperCard(p, isWorking) {
-  const cls = `paper-card${isWorking ? ' paper-card--working' : ''}`;
-
-  /* Authors: bold any name with ◆ */
-  const authorsHtml = (p.authors || [])
-    .map(a => a.includes('◆')
-      ? `<strong style="color:var(--text-muted)">${esc(a)}</strong>`
-      : esc(a))
-    .join(', ');
-
-  /* Venue line (published only) */
-  const venueHtml = (!isWorking && p.journal)
-    ? `<p class="paper-venue">${esc(p.journal)}${p.volume ? `, ${esc(p.volume)}` : ''}${p.pages ? `, pp. ${esc(p.pages)}` : ''}</p>`
-    : '';
-
-  /* Status / award badges */
-  const statusBadge = (isWorking && p.status)
-    ? `<span class="badge-status">${esc(p.status)}</span>`
-    : '';
-  const awardBadge = p.award
-    ? `<span class="badge-award">${ICON.award} ${esc(p.award)}</span>`
-    : '';
-  const badgesHtml = (statusBadge || awardBadge)
-    ? `<div class="paper-badges">${statusBadge}${awardBadge}</div>`
-    : '';
-
-  /* Abstract */
-  const abstractHtml = p.abstract
-    ? `<details class="abstract">
-         <summary><span class="arrow">${ICON.arrow}</span> Abstract</summary>
-         <p class="abstract-body">${esc(p.abstract)}</p>
-       </details>`
-    : '';
-
-  /* Tags */
-  const tagsHtml = (p.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
-
-  /* Links */
-  const pdfLink = p.pdf_link
-    ? p.pdf_link === '#'
-      ? `<span class="paper-link paper-link--dim" title="PDF coming soon">${ICON.document} PDF</span>`
-      : `<a href="${esc(p.pdf_link)}" class="paper-link" target="_blank" rel="noopener">${ICON.document} PDF</a>`
-    : '';
-  const preprintLink = p.preprint_link
-    ? `<a href="${esc(p.preprint_link)}" class="paper-link" target="_blank" rel="noopener">${ICON.external} Preprint</a>`
-    : '';
-  const doiLink = (p.doi_link || p.doi)
-    ? `<a href="${esc(p.doi_link || 'https://doi.org/' + p.doi)}" class="paper-link" target="_blank" rel="noopener">${ICON.external} DOI</a>`
-    : '';
-
-  return `
-    <article class="${cls}">
-      <div class="paper-header">
-        <h4 class="paper-title">${esc(p.title)}</h4>
-        <span class="paper-year">${esc(String(p.year))}</span>
+  el.innerHTML = `<div class="edu-list">${entries.map(e => `
+    <div class="edu-card">
+      <div class="edu-main">
+        <div class="edu-left">
+          <div class="edu-institution">${esc(e.institution)}</div>
+          <div class="edu-degree">${esc(e.degree)}</div>
+          <div class="edu-detail">${esc(e.detail)}</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-period">${esc(e.period)}</div>
+          <div class="edu-location">${esc(e.location)}</div>
+        </div>
       </div>
-      <p class="paper-authors">${authorsHtml}</p>
-      ${venueHtml}
-      ${badgesHtml}
-      ${abstractHtml}
-      <div class="paper-footer">
-        ${tagsHtml}
-        <span class="paper-spacer"></span>
-        ${pdfLink}${preprintLink}${doiLink}
-      </div>
-    </article>`;
+      ${e.awards?.length ? `
+      <ul class="edu-awards">
+        ${e.awards.map(a => `<li>${esc(a)}</li>`).join('')}
+      </ul>` : ''}
+    </div>
+  `).join('')}</div>`;
 }
 
 /* ════════════════════════════════════════════════════
@@ -321,30 +261,20 @@ function renderActivities(activities) {
 }
 
 /* ════════════════════════════════════════════════════
-   RENDER: NEWS
+   RENDER: SKILLS & INTERESTS
    ════════════════════════════════════════════════════ */
-function renderNews(items) {
-  const el = document.getElementById('news-list');
-  if (!el || !items?.length) return;
+function renderSkills(groups) {
+  const el = document.getElementById('skills-grid');
+  if (!el || !groups?.length) return;
 
-  const sorted = [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  el.innerHTML = `
-    <div class="news-list">
-      ${sorted.map(item => `
-        <div class="news-item">
-          <span class="news-date">${fmtDate(item.date)}</span>
-          <div>
-            <p class="news-text">${esc(item.text)}</p>
-            ${item.link
-              ? `<a href="${esc(item.link)}" class="news-read-more" target="_blank" rel="noopener">
-                   ${esc(item.link_text || 'Read more')} ${ICON.external}
-                 </a>`
-              : ''}
-          </div>
-        </div>
-      `).join('')}
-    </div>`;
+  el.innerHTML = `<div class="skills-grid">${groups.map(g => `
+    <div class="skill-group">
+      <div class="skill-category">${esc(g.category)}</div>
+      <ul class="skill-list">
+        ${(g.items || []).map(item => `<li>${esc(item)}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('')}</div>`;
 }
 
 /* ════════════════════════════════════════════════════
@@ -434,12 +364,12 @@ function showError(err) {
    ════════════════════════════════════════════════════ */
 async function init() {
   try {
-    const { profile, publications, news, activities } = await loadAll();
+    const { profile, education, activities, skills } = await loadAll();
 
     renderProfile(profile);
-    renderPublications(publications);
+    renderEducation(education);
     renderActivities(activities);
-    renderNews(news);
+    renderSkills(skills);
 
     setupMobileNav();
     setupScrollSpy();

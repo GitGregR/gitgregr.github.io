@@ -568,44 +568,122 @@ details.abstract[open] summary .arrow { transform: rotate(90deg); }
 }
 
 /* ════════════════════════════════════════════════════
-   NEWS SECTION
+   EDUCATION SECTION
    ════════════════════════════════════════════════════ */
-.news-list { display: flex; flex-direction: column; }
+.edu-list { display: flex; flex-direction: column; gap: 1rem; }
 
-.news-item {
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 0 1.35rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-  align-items: baseline;
+.edu-card {
+  padding: 1.2rem 1.35rem 1.1rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
-.news-item:first-child { padding-top: .1rem; }
-.news-item:last-child { border-bottom: none; }
+.edu-card:hover { box-shadow: var(--shadow-md); transform: translateX(2px); }
 
-.news-date {
-  font-family: var(--font-mono);
-  font-size: .67rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  padding-top: .2rem;
+.edu-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: .75rem;
 }
 
-.news-text {
+.edu-institution {
   font-size: .9375rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .2rem;
+}
+.edu-degree {
+  font-size: .875rem;
   color: var(--text-body);
-  line-height: 1.68;
+  margin-bottom: .15rem;
+}
+.edu-detail {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  color: var(--blue);
+  letter-spacing: .01em;
 }
 
-.news-read-more {
-  display: inline-flex; align-items: center; gap: .3rem;
-  margin-top: .4rem;
-  font-family: var(--font-mono); font-size: .67rem;
-  color: var(--blue);
-  transition: color var(--dur);
+.edu-right { text-align: right; flex-shrink: 0; }
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
-.news-read-more:hover { color: var(--blue-hover); text-decoration: none; }
-.news-read-more svg { width: 10px; height: 10px; }
+.edu-location {
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  color: var(--text-muted);
+  margin-top: .15rem;
+}
+
+.edu-awards {
+  border-top: 1px solid var(--border);
+  padding-top: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  list-style: none;
+}
+.edu-awards li {
+  font-size: .8rem;
+  color: var(--text-body);
+  padding-left: 1rem;
+  position: relative;
+}
+.edu-awards li::before {
+  content: '•';
+  position: absolute;
+  left: .2rem;
+  color: var(--blue);
+}
+
+/* ════════════════════════════════════════════════════
+   SKILLS & INTERESTS SECTION
+   ════════════════════════════════════════════════════ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.skill-group {
+  padding: 1rem 1.15rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.skill-category {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: .75rem;
+}
+
+.skill-list { display: flex; flex-direction: column; gap: .3rem; list-style: none; }
+.skill-list li {
+  font-size: .875rem;
+  color: var(--text-body);
+  padding-left: .85rem;
+  position: relative;
+}
+.skill-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
 
 /* ════════════════════════════════════════════════════
    CONTACT SECTION
@@ -747,7 +825,9 @@ details.abstract[open] summary .arrow { transform: rotate(90deg); }
   .section-heading { font-size: 1.65rem; }
   .paper-header { flex-direction: column; gap: .35rem; }
   .paper-year { align-self: flex-start; }
-  .news-item { grid-template-columns: 1fr; gap: .3rem; }
+  .edu-main { flex-direction: column; gap: .4rem; }
+  .edu-right { text-align: left; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
   .activity-card { grid-template-columns: 1fr; }
   .activity-period { text-align: left; }
   .about-cta { flex-direction: column; }

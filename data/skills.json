@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Technical",
+    "items": ["Python", "Ubuntu", "LaTeX", "Investment analysis"]
+  },
+  {
+    "category": "Languages",
+    "items": ["Mandarin Chinese (California Seal of Biliteracy)", "Indonesian (beginner)"]
+  },
+  {
+    "category": "Research",
+    "items": ["Social media data collection & analysis", "Academic literature synthesis"]
+  },
+  {
+    "category": "Interests",
+    "items": ["Piano (level 10 candidate)", "Taekwondo (black belt)", "Golf", "Investing"]
+  }
+]

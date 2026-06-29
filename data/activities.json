@@ -45,32 +45,5 @@
         "link": null
       }
     ]
-  },
-  {
-    "category": "Skills & Interests",
-    "icon": "💡",
-    "items": [
-      {
-        "title": "Technical",
-        "organization": "",
-        "period": "",
-        "description": "Python, Ubuntu, LaTeX, investment analysis.",
-        "link": null
-      },
-      {
-        "title": "Languages",
-        "organization": "",
-        "period": "",
-        "description": "Mandarin Chinese (California Seal of Biliteracy), Indonesian (beginner).",
-        "link": null
-      },
-      {
-        "title": "Interests",
-        "organization": "",
-        "period": "",
-        "description": "Piano (level 10 candidate), taekwondo (black belt), golf, investing.",
-        "link": null
-      }
-    ]
   }
 ]

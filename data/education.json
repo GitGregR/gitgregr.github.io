@@ -1,0 +1,24 @@
+[
+  {
+    "institution": "University of California Los Angeles (UCLA)",
+    "location": "Westwood, CA",
+    "degree": "Business Economics B.A.",
+    "detail": "GPA 4.0",
+    "period": "Expected June 2029",
+    "awards": [
+      "2025–2026 Dean's Honors List (Fall, Winter, Spring)"
+    ]
+  },
+  {
+    "institution": "El Toro High School",
+    "location": "Lake Forest, CA",
+    "degree": "High School Diploma",
+    "detail": "GPA 4.9 | SAT 1500 | ACT 34",
+    "period": "June 2025",
+    "awards": [
+      "AP Capstone Diploma | AP Scholar with Distinction | Golden State Seal Merit Diploma",
+      "Torch Student-Athlete Excellence Award | Charger Student Excellence Award",
+      "UC Irvine, Regents' Scholarship | Miami University, Redhawk Excellence and Prodesse Scholarships"
+    ]
+  }
+]
