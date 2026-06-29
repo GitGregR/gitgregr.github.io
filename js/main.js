@@ -38,7 +38,6 @@ const SOCIALS = [
   { key: 'scholar',  label: 'Scholar',  icon: ICON.scholar  },
   { key: 'github',   label: 'GitHub',   icon: ICON.github   },
   { key: 'linkedin', label: 'LinkedIn', icon: ICON.linkedin  },
-  { key: 'email',    label: 'Email',    icon: ICON.email    },
   { key: 'bluesky',  label: 'Bluesky',  icon: ICON.bluesky  },
   { key: 'twitter',  label: 'Twitter',  icon: ICON.twitter  },
   { key: 'orcid',    label: 'ORCID',    icon: ICON.orcid    },
@@ -192,28 +191,12 @@ function renderSocials(links, containerId, style) {
   if (!el) return;
   el.innerHTML = SOCIALS
     .filter(s => links[s.key])
-    .map(s => {
-      if (s.key === 'email') {
-        const cls = style === 'btn' ? 'btn-secondary' : 'social-chip';
-        return `<span class="${cls} social-email-copy" data-email="${esc(links.email)}" role="button" tabindex="0" title="Click to copy email">${s.icon} ${s.label}</span>`;
-      }
-      return style === 'btn'
+    .map(s =>
+      style === 'btn'
         ? `<a href="${esc(links[s.key])}" class="btn-secondary" target="_blank" rel="noopener">${s.icon} ${s.label}</a>`
-        : `<a href="${esc(links[s.key])}" class="social-chip" target="_blank" rel="noopener" title="${s.label}">${s.icon} ${s.label}</a>`;
-    })
+        : `<a href="${esc(links[s.key])}" class="social-chip" target="_blank" rel="noopener" title="${s.label}">${s.icon} ${s.label}</a>`
+    )
     .join('');
-
-  el.querySelectorAll('.social-email-copy').forEach(chip => {
-    const originalHTML = chip.innerHTML;
-    const doCopy = () => {
-      navigator.clipboard.writeText(chip.dataset.email).then(() => {
-        chip.textContent = 'Copied!';
-        setTimeout(() => { chip.innerHTML = originalHTML; }, 2000);
-      });
-    };
-    chip.addEventListener('click', doCopy);
-    chip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') doCopy(); });
-  });
 }
 
 /* ════════════════════════════════════════════════════
