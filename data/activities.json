@@ -1,81 +1,75 @@
 [
   {
-    "category": "Teaching & Mentoring",
-    "icon": "🎓",
+    "category": "Research",
+    "icon": "🔬",
     "items": [
       {
-        "title": "Teaching Assistant — Info 2850: Networks",
-        "organization": "Cornell University",
-        "period": "Fall 2024",
-        "description": "Led weekly lab sections for 60 undergraduates; designed problem sets covering graph theory, diffusion models, and network centrality. Held two office hours sessions per week.",
-        "link": null
+        "title": "Research Assistant — Social Network Research",
+        "organization": "Stanford Cyber Policy Center",
+        "period": "June 2023 – November 2024",
+        "description": "Collected and coded social media data for a research project examining the use of search engines to propagate the consumption of low-quality information.",
+        "link": "https://cyber.fsi.stanford.edu/"
       },
       {
-        "title": "Undergraduate Research Mentor",
-        "organization": "Cornell Information Science",
-        "period": "2023–Present",
-        "description": "Mentoring two junior undergraduates on independent research projects related to information credibility and platform design on social media.",
+        "title": "Student Researcher — AP Research: Investment Analysis",
+        "organization": "El Toro High School",
+        "period": "August 2024 – June 2025",
+        "description": "Designed and executed an original study comparing the effectiveness of fundamental vs. technical investment analysis. Presented findings to an AP Research-certified panel and produced a full academic paper and literature review.",
         "link": null
       }
     ]
   },
   {
-    "category": "Service & Leadership",
+    "category": "Leadership & Service",
     "icon": "🤝",
     "items": [
       {
-        "title": "Peer Reviewer",
-        "organization": "ACM CHI, CSCW, ICWSM, WebSci",
-        "period": "2023–Present",
-        "description": "Peer reviewer for top venues in human-computer interaction, computational social science, and web science. Completed 15+ reviews to date.",
+        "title": "Group Leader and Volunteer Tutor",
+        "organization": "Global Cultural Education Foundation",
+        "period": "September 2024 – August 2025",
+        "description": "Led a delegation of 20 U.S. participants as senior student on a two-week immersion trip to Taiwan. Tutored Taiwanese middle schoolers via weekly Zoom sessions and coordinated lesson plans with local faculty. Developed Mandarin conversational fluency through immersion, earning the California Seal of Biliteracy.",
         "link": null
       },
       {
-        "title": "Graduate Student Representative",
-        "organization": "Cornell IS Ph.D. Caucus",
-        "period": "2024–Present",
-        "description": "Elected representative for Ph.D. student concerns. Organized the department's annual research symposium with 120+ attendees and co-authored the student wellness survey.",
+        "title": "Team Captain, Varsity Golf",
+        "organization": "Athletic Leadership Council, El Toro High School",
+        "period": "August 2024 – June 2025",
+        "description": "Organized team strategy, served as liaison between coaching staff and team, and mentored underclassmen.",
+        "link": null
+      },
+      {
+        "title": "Member and Volunteer Tutor",
+        "organization": "National Honors Society / Math Honors Society",
+        "period": "August 2024 – June 2025",
+        "description": "Tutored peers in math and core subjects at El Toro Public Library and El Toro Innovation Center. Provided academic support to ESL students, athletes, and demerit-recovery students.",
         "link": null
       }
     ]
   },
   {
-    "category": "Talks & Media",
-    "icon": "🎤",
+    "category": "Skills & Interests",
+    "icon": "💡",
     "items": [
       {
-        "title": "Invited Talk: \"Designing for Trust\"",
-        "organization": "MIT Media Lab, Human Dynamics Group",
-        "period": "March 2025",
-        "description": "Presented work on how platform design choices interact with user trust in the context of algorithmic content curation. Q&A with faculty and graduate researchers.",
-        "link": "#"
+        "title": "Technical",
+        "organization": "",
+        "period": "",
+        "description": "Python, Ubuntu, LaTeX, investment analysis.",
+        "link": null
       },
       {
-        "title": "Podcast Interview",
-        "organization": "Technically Speaking, Episode 42",
-        "period": "November 2024",
-        "description": "Discussed the corrections backfire research and its implications for platform content moderation policy, in conversation with host Maya Chen.",
-        "link": "#"
-      }
-    ]
-  },
-  {
-    "category": "Open Source & Software",
-    "icon": "💻",
-    "items": [
-      {
-        "title": "InfoTrack",
-        "organization": "GitHub",
-        "period": "2023–Present",
-        "description": "An open-source Python toolkit for tracking cross-platform information spread. Supports data collection from four platforms via their APIs. 200+ GitHub stars, actively maintained.",
-        "link": "https://github.com/"
+        "title": "Languages",
+        "organization": "",
+        "period": "",
+        "description": "Mandarin Chinese (California Seal of Biliteracy), Indonesian (beginner).",
+        "link": null
       },
       {
-        "title": "SurveyFlow",
-        "organization": "GitHub",
-        "period": "2022–2023",
-        "description": "A lightweight library for designing and deploying survey experiments on Prolific and MTurk with attention checks, manipulation checks, and automated exclusion criteria.",
-        "link": "https://github.com/"
+        "title": "Interests",
+        "organization": "",
+        "period": "",
+        "description": "Piano (level 10 candidate), taekwondo (black belt), golf, investing.",
+        "link": null
       }
     ]
   }
