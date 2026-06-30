@@ -1,7 +1,7 @@
 [
   {
     "category": "Technical",
-    "items": ["Python", "Ubuntu", "LaTeX", "Investment analysis"]
+    "items": ["Python", "Ubuntu", "LaTeX", "Git"]
   },
   {
     "category": "Languages",
@@ -9,7 +9,7 @@
   },
   {
     "category": "Research",
-    "items": ["Social media data collection & analysis", "Academic literature synthesis"]
+    "items": ["Social media data collection & analysis", "Academic literature synthesis", "Investment analysis"]
   },
   {
     "category": "Interests",
