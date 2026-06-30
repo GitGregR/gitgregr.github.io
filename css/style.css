@@ -142,6 +142,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-bottom: 0;
 }
 
+/* ── Sidebar: Email ─────────────────────────────────── */
+.sidebar-email {
+  margin-top: .9rem;
+}
+.sidebar-email .social-chip { max-width: 100%; }
+
 /* ── Sidebar: Rule ──────────────────────────────────── */
 .sidebar-rule {
   height: 1px;

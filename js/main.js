@@ -109,6 +109,15 @@ function renderProfile(p) {
   setText('sidebar-title', p.title);
   setText('sidebar-affiliation', p.affiliation);
 
+  // Sidebar: email click-to-copy
+  const sidebarEmailEl = document.getElementById('sidebar-email');
+  if (sidebarEmailEl) {
+    sidebarEmailEl.innerHTML = p.links.email
+      ? `<span class="social-chip btn-email-copy" data-email="${esc(p.links.email)}" role="button" tabindex="0" title="Click to copy email">${ICON.email} ${esc(p.links.email)}</span>`
+      : '';
+    wireEmailCopy(sidebarEmailEl.querySelector('.btn-email-copy'));
+  }
+
   // Drawer (mobile)
   setText('drawer-name', p.name);
   setText('drawer-title', p.title);
@@ -149,18 +158,7 @@ function renderProfile(p) {
         : '',
     ].join('');
 
-    const copyEl = ctaEl.querySelector('.btn-email-copy');
-    if (copyEl) {
-      const originalHTML = copyEl.innerHTML;
-      const doCopy = () => {
-        navigator.clipboard.writeText(copyEl.dataset.email).then(() => {
-          copyEl.textContent = 'Copied!';
-          setTimeout(() => { copyEl.innerHTML = originalHTML; }, 2000);
-        });
-      };
-      copyEl.addEventListener('click', doCopy);
-      copyEl.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') doCopy(); });
-    }
+    wireEmailCopy(ctaEl.querySelector('.btn-email-copy'));
   }
 
   // Contact section
@@ -182,6 +180,19 @@ function renderProfile(p) {
 function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value || '';
+}
+
+function wireEmailCopy(copyEl) {
+  if (!copyEl) return;
+  const originalHTML = copyEl.innerHTML;
+  const doCopy = () => {
+    navigator.clipboard.writeText(copyEl.dataset.email).then(() => {
+      copyEl.textContent = 'Copied!';
+      setTimeout(() => { copyEl.innerHTML = originalHTML; }, 2000);
+    });
+  };
+  copyEl.addEventListener('click', doCopy);
+  copyEl.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') doCopy(); });
 }
 
 function renderSocials(links, containerId, style) {
