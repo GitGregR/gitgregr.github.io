@@ -172,9 +172,10 @@ function renderProfile(p) {
       <p class="contact-intro">
       </p>
       ${p.links.email
-        ? `<a href="mailto:${esc(p.links.email)}" class="contact-email">${ICON.email} ${esc(p.links.email)}</a>`
+        ? `<span class="contact-email btn-email-copy" data-email="${esc(p.links.email)}" role="button" tabindex="0" title="Click to copy email">${ICON.email} ${esc(p.links.email)}</span>`
         : ''}
     `;
+    wireEmailCopy(contactEl.querySelector('.btn-email-copy'));
   }
 
   // Footer
