@@ -576,8 +576,7 @@ details.abstract[open] summary .arrow { transform: rotate(90deg); }
   padding: 1.2rem 1.35rem 1.1rem 1.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--blue);
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
   transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .edu-card:hover { box-shadow: var(--shadow-md); transform: translateX(2px); }

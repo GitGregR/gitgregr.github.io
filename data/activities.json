@@ -2,20 +2,20 @@
   {
     "category": "Research",
     "items": [
-      {
-        "title": "Research Assistant — Social Network Research",
-        "organization": "Stanford Cyber Policy Center",
-        "period": "June 2023 – November 2024",
-        "description": "Collected and coded social media data for a research project examining the use of search engines to propagate the consumption of low-quality information.",
-        "link": "https://cyber.fsi.stanford.edu/"
-      },
-      {
-        "title": "Student Researcher — AP Research: Investment Analysis",
-        "organization": "El Toro High School",
-        "period": "August 2024 – June 2025",
-        "description": "Designed and executed an original study comparing the effectiveness of fundamental vs. technical investment analysis. Presented findings to an AP Research-certified panel and produced a full academic paper and literature review.",
-        "link": null
-      }
+        {
+            "title": "Student Researcher — AP Research: Investment Analysis",
+            "organization": "El Toro High School",
+            "period": "August 2024 – June 2025",
+            "description": "Designed and executed an original study comparing the effectiveness of fundamental vs. technical investment analysis. Presented findings to an AP Research-certified panel and produced a full academic paper and literature review.",
+            "link": null
+        },
+        {
+          "title": "Research Assistant — Social Network Research",
+          "organization": "Stanford Cyber Policy Center",
+          "period": "June 2023 – August 2023",
+          "description": "Collected and coded social media data for a research project examining the use of search engines to propagate the consumption of low-quality information.",
+          "link": "https://cyber.fsi.stanford.edu/"
+        }
     ]
   },
   {
@@ -25,7 +25,7 @@
         "title": "Group Leader and Volunteer Tutor",
         "organization": "Global Cultural Education Foundation",
         "period": "September 2024 – August 2025",
-        "description": "Led a delegation of 20 U.S. participants as senior student on a two-week immersion trip to Taiwan. Tutored Taiwanese middle schoolers via weekly Zoom sessions and coordinated lesson plans with local faculty. Developed Mandarin conversational fluency through immersion, earning the California Seal of Biliteracy.",
+        "description": "Led a delegation of 20 U.S. participants as senior student on a two-week immersion trip to Taiwan. Tutored Taiwanese middle schoolers via weekly Zoom sessions and coordinated lesson plans with local faculty.",
         "link": null
       },
       {
