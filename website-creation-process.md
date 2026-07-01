@@ -369,6 +369,50 @@ A few smaller asks followed, each implemented and pushed directly:
   **Prompt:** "Can you remove the spaces between the "@" symbol and the
   letters for the email address in the upper left of the sidebar"
   **Commit:** `54c0ff2` — "Tighten spacing around the sidebar email @ glyph"
+- **Further tighten "@" spacing** — `-.35em` still left a visible gap;
+  tightened to `-.6em` to read fully flush against the rest of the address.
+  **Prompt:** "The space between the "@" symbol in the email address in the
+  left sidebar and the rest of the email address is still fairly apparent,
+  could you reduce it to match the spacing between the old special "@"
+  symbol and the rest of the email address"
+  **Commit:** `9259881` — "Further tighten sidebar email @ spacing to match
+  original flush look"
+- **Revert the whole "@" glyph fix** — asked to compare the current,
+  previous, and original spacing side-by-side; rather than tune further, the
+  user chose to fully revert the "@" glyph work (scoped to just that fix,
+  not the click-to-copy feature it sits alongside), restoring plain Space
+  Mono rendering — including its stylized swash "@" — via a clarifying
+  question about revert scope.
+  **Prompt:** "Please create previews for the current spacing of the email
+  address "@" symbol, the previous one, and the original", followed by
+  "Revert to the complete original, prior to any changes" (scoped to "Just
+  the @ glyph fix, not the whole feature")
+  **Commit:** `3e208a6` — "Revert the sidebar email @ glyph fix" (undoes
+  `4320e27` / `54c0ff2` / `9259881`)
+- **Re-apply a standard, full-width "@" glyph** — re-introduced the
+  font-swap span, this time explicitly at standard/typical glyph width with
+  spacing matched to the original gaps, instead of the earlier
+  squished/negative-margin approach.
+  **Prompt:** "Change the special "@" symbol to a standard "@" symbol, with
+  the "@" symbol being of standard and typical, not squished, width, and
+  having the same spacing gaps between it and the rest of the email
+  address, for the email address in the top of the lefthand sidebar"
+  **Commit:** `f655138` — "Use a standard, full-width @ glyph in the sidebar
+  email chip"
+- **Pin the original glyph behind a git tag** — instead of keeping both
+  renderings in code, an annotated tag `sidebar-email-at-original` was
+  created pointing at the revert commit (`3e208a6`), with restore
+  instructions in the tag message, and a one-line code comment in
+  `js/main.js` cross-referencing the tag for future switch-back.
+  **Prompt:** "Keep the original special "@" symbol stored for a quick
+  switch back in the future if necessary and requested, but maintain the
+  live page as it stands right now"
+  **Commit:** `2fce42b` — "Note the git tag for reverting to the original @
+  glyph"
+- **Bio copy edit** — hyphenated "English learning" to "English-learning" in
+  the About bio. Made directly in `data/profile.json` outside the chat (by
+  hand or IDE autocorrect), then picked up and committed as-is.
+  **Commit:** `48c400b` — "Hyphenate 'English-learning' in the About bio"
 
 ---
 
