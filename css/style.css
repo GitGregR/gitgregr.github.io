@@ -150,7 +150,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .sidebar-email .email-at {
   font-family: 'Courier New', monospace;
   display: inline-block;
-  margin: 0 -.35em;
+  margin: 0 -.6em;
 }
 
 /* ── Sidebar: Rule ──────────────────────────────────── */
